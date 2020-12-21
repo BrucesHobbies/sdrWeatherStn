@@ -7,15 +7,25 @@ sdrWeatherStn.py records any 433 MHz data it recognizes from a low-cost Software
 # sdrWeatherStn™ Project Overview
 I had a pump house and workshop where I don't run the heat normally. I wanted to track the temperature and humidity levels to prevent frozen pipes and black mold. Heating in the pump house is from a single heat lamp and I didn't want to think about the damage if the bulb should burn out in the middle of sub-freezing night. I purchased a weather station to monitor the out buildings and was very impressed with the 433 MHz wireless range but clearing minimum and maximum temps/humidity, and alarm programming were not so user friendly using a magic sequence with only 3 buttons. It just seemed a natural to see if I could use the RPI with a Software Defined Radio (SDR) to pick up the temperature and humidity readings and define my own custom alerts along with logging all the data.
 Using a SDR on the RPI, I was able to pick up Ambient Weather, Acurite, and LaCrosse weather stations. To get a complete list of devices supported list under the latest version:
+
     rtl_433 -R
 
-![Figure 1: RPI with SDR](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure1.png)
 
-![Figure 2: Ambient Weather Station and Outdoor Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure2.png)
+![Figure 1: RPI with SDR](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure1.PNG)
 
-![Figure 3: Acurite Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure3.png)
+Figure 1: RPI with SDR
 
-![Figure 4: LaCrosse Outdoor Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure4.png)
+![Figure 2: Ambient Weather Station and Outdoor Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure2.PNG)
+
+Figure 2: Ambient Weather Station and Outdooor Temperature / Humidity Sensor
+
+![Figure 3: Acurite Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure3.PNG)
+
+Figure 3: Acurite Temperature / Humidity Sensor
+
+![Figure 4: LaCrosse Outdoor Temperature / Humidity Sensor](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure4.PNG)
+
+Figure 4: LaCrosse Outdoor Temperature / Humidity Sensor
 
 The program runs from a terminal window or at boot. If run from a terminal window the status screen is as shown below:
 
@@ -30,7 +40,7 @@ As an Amazon Associate I earn a small commission from qualifying purchases. I ap
 ## One or more of these weather sensors
 The base stations are not needed but nice to have as a second display.
 
-- [Ambient Weather Remote Sensors](https://amzn.to/34A0Dsi])
+- [Ambient Weather Remote Sensors](https://amzn.to/34A0Dsi)
 
 - [Ambient Weather Wireless Thermo-Hydrometer](https://amzn.to/34yTcl4)
 
