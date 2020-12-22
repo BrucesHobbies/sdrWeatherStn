@@ -5,7 +5,7 @@ All Rights Reserved
 
 sdrWeatherStn.py records any 433 MHz data it recognizes from a low-cost Software Defined Radio (SDR) USB dongle such as the NooElec R820T which are about $20 USD. If your country uses a different frequency than 433 MHz, you can update the frequency in the Python script. The program logs each sensor to a separate Comma Separated Variable (csv) file with the option of throttling the data to every 15 minutes or custom time intervals. The program automatically generates a header row for each sensor log file with the appropriate labels for the data that will be logged. The program also logs some types of security sensors, smoke detectors, car tire pressure monitoring sensors including id, etc. Logs can be analyzed in a spreadsheet program or using MatPlotLib. publishData.py is for you to customize the alerts or to add interfaces like Blynk, Twilo, MQTT, etc. - This is a DIY project for the Raspberry Pi or similar system using an inexpensive RTL-SDR. The software is written in Python and runs under Linux.
 # sdrWeatherStn™ Project Overview
-I had a pump house and workshop where I don't run the heat normally. I wanted to track the temperature and humidity levels to prevent frozen pipes and black mold. Heating in the pump house is from a single heat lamp and I didn't want to think about the damage if the bulb should burn out in the middle of sub-freezing night. I purchased a weather station to monitor the out buildings and was very impressed with the 433 MHz wireless range but clearing minimum and maximum temps/humidity, and alarm programming were not so user friendly using a magic sequence with only 3 buttons. It just seemed a natural to see if I could use the RPI with a Software Defined Radio (SDR) to pick up the temperature and humidity readings and define my own custom alerts along with logging all the data.
+I had a pump house and workshop where I don't run the heat normally. I wanted to track the temperature and humidity levels to prevent frozen pipes and black mold. Heating in the pump house is from a single heat lamp and I didn't want to think about the damage if the bulb should burn out in the middle of sub-freezing night. I purchased a weather station to monitor the out buildings and was very impressed with the 433 MHz wireless range but clearing minimum and maximum temps/humidity, and alarm programming were not so user friendly using a magic sequence with only 3 buttons. It just seemed natural to see if I could use the RPI with a Software Defined Radio (SDR) to pick up the temperature and humidity readings and define my own custom alerts along with logging all the data.
 Using a SDR on the RPI, I was able to pick up Ambient Weather, Acurite, and LaCrosse weather stations. To get a complete list of devices supported list under the latest version:
 
     rtl_433 -R
@@ -31,6 +31,14 @@ The program runs from a terminal window or at boot. If run from a terminal windo
 
     2020-12-21 15:30:00 Ambientweather-F007TH Id nnn Ch 1 Temperature 70.8F Humidity 37
     2020-12-21 15:30:01 Ambientweather-F007TH Id nnn Ch 1 Temperature 70.8F Humidity 37
+
+![Figure 5: Temperature Plot](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure_5.PNG)
+
+Figure 5: Temperature Plot
+
+![Figure 6: Humidity Plot](https://github.com/BrucesHobbies/sdrWeatherStn/blob/main/figures/Figure_6.PNG)
+
+Figure 5: Humidity Plot
 
 # Required Hardware 
 As an Amazon Associate I earn a small commission from qualifying purchases. I appreciate your support, if you purchase using the links below.
@@ -81,8 +89,13 @@ Before continuing make sure your operating system has been updated with the late
     sudo make install
     cd ~
 
-## Step 3: Download sdrWeatherStn software
-There is 2 python files: sdrWeatherStn.py and publishData.py. To get a copy of the source files type in the following git command assuming you have already installed git:
+## Step 3: Install matplotlib
+Matplotlib is used for plotting temperature and humidity:
+
+    sudo pip3 install matplotlib
+
+## Step 4: Download sdrWeatherStn software
+There are 3 python files. To get a copy of the source files type in the following git command assuming you have already installed git:
 
     git clone https://github.com/BrucesHobbies/sdrWeatherStn
 
@@ -105,6 +118,10 @@ Please feel free to fork and contribute or provide feedback on priorities and fe
 Just simply type the following from a terminal window:
 
     python3 sdrWeatherStn.py
+    
+To plot the data, edit the csv file list in the Python script and then run:
+
+    python3 plotTempHumidity.py
 
 # Auto Start at Boot
 Type the following command:
