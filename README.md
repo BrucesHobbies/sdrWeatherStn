@@ -41,7 +41,7 @@ Figure 5: Temperature Plot
 Figure 5: Humidity Plot
 
 # Required Hardware 
-As an Amazon Associate I earn a small commission from qualifying purchases. I appreciate your support, if you purchase using the links below.
+As an Amazon Associate I earn a small commission from qualifying purchases. It does not in any way change the prices on Amazon. I appreciate your support, if you purchase using the links below.
 ## Software Define Radio (about $25 USD)
 - [NooElec SDR](https://amzn.to/3mEoJYY)
 
